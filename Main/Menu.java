@@ -1,7 +1,9 @@
 package desafioCadastroAnimais.Main;
 
-import desafioCadastroAnimais.Methods.LeituraCases;
+import desafioCadastroAnimais.Methods.Case2.BuscarPet;
+import desafioCadastroAnimais.Domain.LeituraCases;
 import desafioCadastroAnimais.Methods.Case1.Cadastro;
+import desafioCadastroAnimais.Methods.TodosAnimais;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -11,7 +13,6 @@ public class Menu {
         LeituraCases leituraArquivo = new LeituraCases();
         String escolha;
         Scanner scanner = new Scanner(System.in);
-        label:
         try {
             while (true) {
                 leituraArquivo.leitura_Cases();
@@ -21,26 +22,26 @@ public class Menu {
                         Cadastro.Perguntas();
                         break;
                     case "2":
-                        System.out.println("Listar pets por algum critério (idade, nome, raça)");
+                        BuscarPet.buscarPet();
                         break;
                     case "3":
-                        System.out.println("Listar todos os pets cadastrados");
+                        System.out.println("Alterar os dados do pet cadastrado");
                         break;
                     case "4":
-                        System.out.println("Alterar os dados do pet cadastrado");
+                        TodosAnimais.todosOsAnimais();
                         break;
                     case "5":
                         System.out.println("Deletar um pet cadastrado");
                         break;
                     case "6":
                         System.out.println("Saindo Do Menu, Obrigado");
-                        break label;
+                        return;
                     default:
                         System.out.println("Não existe essa opção, tente novamente");
                         break;
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e.getCause());
         }
     }

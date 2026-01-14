@@ -1,4 +1,4 @@
-package desafioCadastroAnimais.Methods;
+package desafioCadastroAnimais.Domain;
 
 import java.io.*;
 

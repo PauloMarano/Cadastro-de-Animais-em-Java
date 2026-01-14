@@ -1,7 +1,7 @@
 package desafioCadastroAnimais.Methods.Case1;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Regexs.Regexs_Case1;
+import desafioCadastroAnimais.Regexs.RegexsCase1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Cadastro {
     public static void Perguntas() throws IOException {
-        Salvando_Informacoes salvandoInformacoes = new Salvando_Informacoes();
+        SalvandoInformacoes salvandoInformacoes = new SalvandoInformacoes();
         VerificadorDeRegras verificadorDeRegras = new VerificadorDeRegras();
         File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Perguntas.txt");
         FileReader fileReader = new FileReader(file_Perguntas);
@@ -27,7 +27,7 @@ public class Cadastro {
                 System.out.println(linha);
                 String resposta = scanner.nextLine().toUpperCase();
                 respostas[i] = resposta.toUpperCase();
-                if (Regexs_Case1.naoInformado(respostas[i])){
+                if (RegexsCase1.naoInformado(respostas[i])){
                     respostas[i] = Animal.NAO_INFORMADO;
                 }
                 i += 1;
