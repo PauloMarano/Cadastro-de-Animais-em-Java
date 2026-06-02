@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Cadastro {
     public static void Perguntas() throws IOException {
         SalvandoInformacoes salvandoInformacoes = new SalvandoInformacoes();
-        VerificadorDeRegras verificadorDeRegras = new VerificadorDeRegras();
+        VerificadorCadastro verificadorDeRegras = new VerificadorCadastro();
         File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Perguntas.txt");
         FileReader fileReader = new FileReader(file_Perguntas);
         BufferedReader bufferedReader = new BufferedReader(fileReader);

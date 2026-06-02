@@ -1,9 +1,9 @@
 package desafioCadastroAnimais.Main;
 
+import desafioCadastroAnimais.Methods.Pets;
 import desafioCadastroAnimais.Methods.Case2.BuscarPet;
 import desafioCadastroAnimais.Domain.LeituraCases;
 import desafioCadastroAnimais.Methods.Case1.Cadastro;
-import desafioCadastroAnimais.Methods.TodosAnimais;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -28,10 +28,10 @@ public class Menu {
                         System.out.println("Alterar os dados do pet cadastrado");
                         break;
                     case "4":
-                        TodosAnimais.todosOsAnimais();
+                        Pets.TodosPets();
                         break;
                     case "5":
-                        System.out.println("Deletar um pet cadastrado");
+                        new Pets().DeletPet();
                         break;
                     case "6":
                         System.out.println("Saindo Do Menu, Obrigado");

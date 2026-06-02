@@ -1,15 +1,18 @@
 package desafioCadastroAnimais.Domain;
 
+
+import java.util.NavigableMap;
+
 public class Animal {
 
-    protected String nome;
-    protected String endereco;
-    protected String raca;
-    protected String idade;
-    protected String peso;
-    protected SexoAnimal sexoAnimal;
-    protected GatoOuCachorro gatoOuChachorro;
-    public final static String NAO_INFORMADO = "NAO_INFORMADO";
+    private String nome;
+    private String endereco;
+    private String raca;
+    private String  idade;
+    private String peso;
+    private SexoAnimal sexoAnimal;
+    private GatoOuCachorro gatoOuChachorro;
+    public static String NAO_INFORMADO = "NAO_INFORMADO";
 
     public Animal() {
     }
@@ -70,4 +73,13 @@ public class Animal {
         this.raca = raca;
     }
 
+    public final void animalFinal(String [] strings){
+        if (strings[0] != null) setNome(strings[0]); else setNome(NAO_INFORMADO);
+        if (strings[6] != null) setRaca(strings[6]); else setRaca(NAO_INFORMADO);
+        if (strings[2] != null) setSexoAnimal(SexoAnimal.valueOf(strings[2].toUpperCase())); else setSexoAnimal(SexoAnimal.valueOf(NAO_INFORMADO));
+        if (strings[3] != null) setEndereco(strings[3]); else setEndereco(NAO_INFORMADO);
+        if (strings[1] != null)  setGatoOuChachorro(GatoOuCachorro.valueOf(strings[1].toUpperCase())); else setGatoOuChachorro(GatoOuCachorro.valueOf(NAO_INFORMADO));
+        if (strings[4] != null) setIdade(String.valueOf((strings[4]))); else setIdade(NAO_INFORMADO);
+        if (strings[5] != null) setPeso(String.valueOf((strings[5]))); else setPeso(NAO_INFORMADO);
+    }
 }

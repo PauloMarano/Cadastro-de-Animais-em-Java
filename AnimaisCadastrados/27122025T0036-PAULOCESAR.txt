@@ -1,7 +1,0 @@
-Nome: PAULO CESAR
-Endereco: HIGIENOPOLIS
-Idade: 4
-Peso: 4
-Sexo: M
-Tipo: GATO
-Raca: NAO_INFORMADO

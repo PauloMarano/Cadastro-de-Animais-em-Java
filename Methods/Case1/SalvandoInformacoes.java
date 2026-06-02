@@ -1,8 +1,7 @@
 package desafioCadastroAnimais.Methods.Case1;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Domain.GatoOuCachorro;
-import desafioCadastroAnimais.Domain.SexoAnimal;
+import desafioCadastroAnimais.Methods.Pets;
 import desafioCadastroAnimais.Regexs.RegexsCase1;
 
 import java.io.BufferedWriter;
@@ -17,23 +16,22 @@ public class SalvandoInformacoes {
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("ddMMyyyy'T'HHmm-");
         String dataHora = localDateTime.format(dateTimeFormatter);
-        VerificadorDeRegras verificadorDeRegras = new VerificadorDeRegras();
-
-        RegexsCase1 regexs = new RegexsCase1();
+        VerificadorCadastro verificadorDeRegras = new VerificadorCadastro();
+        
         Animal animal = new Animal();
-
-        animal.setNome(respostas[0]);
-        animal.setRaca(respostas[6]);
-        animal.setSexoAnimal(SexoAnimal.valueOf(respostas[2].toUpperCase()));
-        animal.setEndereco(respostas[3]);
-        animal.setGatoOuChachorro(GatoOuCachorro.valueOf(respostas[1].toUpperCase()));
-        animal.setPeso(respostas[4]);
-        animal.setIdade(respostas[5]);
+        animal.animalFinal(respostas);
+        Pets.SaveAnimal(animal);
 
         if (verificadorDeRegras.verificador(animal)) return;
         else {
             String nomeArquivo = dataHora + RegexsCase1.removerEspacos(animal.getNome()) + ".txt";
-            String[] animalFinal = {"Nome: " + animal.getNome(), "Endereco: " + animal.getEndereco(), ("Idade: ") + animal.getIdade(), "Peso: " + animal.getPeso(), "Sexo: " + animal.getSexoAnimal(), "Tipo: " + animal.getGatoOuChachorro(), "Raca: " + animal.getRaca()};
+            String[] animalFinal = {"Nome: " + animal.getNome(),
+                    "Endereco: " + animal.getEndereco(),
+                    "Idade: " + animal.getIdade(),
+                    "Peso: " + animal.getPeso(),
+                    "Sexo: " + animal.getSexoAnimal(),
+                    "Tipo: " + animal.getGatoOuChachorro(),
+                    "Raca: " + animal.getRaca()};
 
             File file = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\AnimaisCadastrados\\file.txt");
             try {
@@ -49,24 +47,14 @@ public class SalvandoInformacoes {
             try (FileWriter fileWriter = new FileWriter(fileRename);
                  BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);) {
                 for (String string : animalFinal) {
-                    bufferedWriter.write(string + "\n");
+                    bufferedWriter.write(
+                            string + "\n");
                     bufferedWriter.flush();
                 }
-
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
 
-            try (FileWriter fileWriter = new FileWriter("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\AnimaisCadastrados\\animaisCadastradosJuntos.txt", true);
-                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-                for (String string : animalFinal) {
-                    bufferedWriter.write(string + "\n");
-                    bufferedWriter.flush();
-                }
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
 }

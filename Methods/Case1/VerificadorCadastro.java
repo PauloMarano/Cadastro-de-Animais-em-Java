@@ -4,12 +4,12 @@ import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Regexs.RegexsCase1;
 
 
-public class VerificadorDeRegras {
+public class VerificadorCadastro {
     public boolean verificador(Animal animal) {
         RegexsCase1 regexs = new RegexsCase1();
         boolean verifique = false;
         for (int i = 0; i < 1; i++) {
-            if (!animal.getPeso().equals(Animal.NAO_INFORMADO)) {
+            if (!animal.getPeso().equals("NAO_INFORMADO")) {
                 if (Double.valueOf(animal.getIdade()) > 20.0) {
                     System.out.println("Idade Invalida do seu pet invalida");
                     verifique = true;

@@ -17,10 +17,11 @@ public class BuscarPet {
                 5- Raça
                 6- Endereço
                 7- Data de Cadastro""");
+        
 
         String escolha1 = scanner.nextLine();
 
-        switch (escolha1){
+        switch (escolha1) {
             case "1":
                 filtros.nomeOuSobrenome();
                 break;
@@ -39,17 +40,16 @@ public class BuscarPet {
             case "6":
                 filtros.enderecoPet();
                 return;
-            case"7":
+            case "7":
                 filtros.dataDeCadastroPet();
                 return;
 
         }
 
-
         System.out.println("Deseja colocar outro critério (S/N)");
         String escolhaOutroCriterio = scanner.nextLine().toUpperCase();
 
-        if (escolhaOutroCriterio.equals("S")){
+        if (escolhaOutroCriterio.equals("S") || escolhaOutroCriterio.equals("SIM")){
             System.out.println(""" 
                 1- Nome ou sobrenome
                 2- Sexo
