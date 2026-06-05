@@ -1,25 +1,18 @@
-package desafioCadastroAnimais.Methods.Case2;
-
-import desafioCadastroAnimais.Regexs.RegexsCase2;
+package desafioCadastroAnimais.Service.PetsServices;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 
 public class Filtros {
-    RegexsCase2 regexsCase2 = new RegexsCase2();
     Scanner scanner = new Scanner(System.in);
 
     public void nomeOuSobrenome() throws IOException {
         System.out.print("Digite o nome ou sobrenome do Pet: ");
         String texto = scanner.nextLine();
-        if (regexsCase2.nomeSobrenome(texto)) {
-            return;
-        }
-
-
+//        if () {
+//        }
     }
-
     public final void sexoPet() {
         System.out.print("Digite o nome ou sobrenome do Pet: ");
         String texto = scanner.nextLine();

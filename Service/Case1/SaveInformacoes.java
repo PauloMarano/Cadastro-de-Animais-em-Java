@@ -1,7 +1,7 @@
-package desafioCadastroAnimais.Methods.Case1;
+package desafioCadastroAnimais.Service.Case1;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Methods.Pets;
+import desafioCadastroAnimais.Service.PetsServices.Pets;
 import desafioCadastroAnimais.Regexs.RegexsCase1;
 
 import java.io.BufferedWriter;
@@ -11,19 +11,28 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class SalvandoInformacoes {
+public class SaveInformacoes {
+
+    LocalDateTime localDateTime = LocalDateTime.now();
+    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("ddMMyyyy'T'HHmm-");
+    String dataHora = localDateTime.format(dateTimeFormatter);
+    RegrasCadastro verificadorDeRegras = new RegrasCadastro();
+
     public void salvamento_respostas(String[] respostas) {
-        LocalDateTime localDateTime = LocalDateTime.now();
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("ddMMyyyy'T'HHmm-");
-        String dataHora = localDateTime.format(dateTimeFormatter);
-        VerificadorCadastro verificadorDeRegras = new VerificadorCadastro();
-        
+        //Salvando o Animal
         Animal animal = new Animal();
         animal.animalFinal(respostas);
-        Pets.SaveAnimal(animal);
 
-        if (verificadorDeRegras.verificador(animal)) return;
+
+
+        if (verificadorDeRegras.verificador(animal)){
+            System.out.println("Erro ao criar arquivo. Tente novamente!");
+        }
         else {
+            //salvando animal na List
+            Pets.SaveAnimal(animal);
+
+            //criando arquivo animal
             String nomeArquivo = dataHora + RegexsCase1.removerEspacos(animal.getNome()) + ".txt";
             String[] animalFinal = {"Nome: " + animal.getNome(),
                     "Endereco: " + animal.getEndereco(),
@@ -39,7 +48,6 @@ public class SalvandoInformacoes {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
             File fileRename = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\AnimaisCadastrados", nomeArquivo);
             boolean fileNome = file.renameTo(fileRename);
             System.out.println("Cadastro Realizado: " + fileNome);

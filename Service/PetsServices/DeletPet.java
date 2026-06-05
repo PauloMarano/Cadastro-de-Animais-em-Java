@@ -1,29 +1,15 @@
-package desafioCadastroAnimais.Methods;
-
+package desafioCadastroAnimais.Service.PetsServices;
 
 import desafioCadastroAnimais.Domain.Animal;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Pets {
-    private static List<Animal> pets = new ArrayList<>();
+public class DeletPet {
     Scanner scanner = new Scanner(System.in);
+    List<Animal> pets = Pets.getPets();
 
-    public static void SaveAnimal(Animal animal) {
-        pets.add(animal);
-    }
-
-    public static void TodosPets() {
-        int i = 0;
-        for (Animal pet : pets) {
-            i += 1;
-            System.out.println(i + "- " + pet.getNome());
-        }
-    }
-
-    public final void DeletPet() {
+    public void Delet_Pet() {
         int i = 0;
         for (Animal pet : pets) {
             i += 1;
@@ -62,3 +48,4 @@ public class Pets {
         }
     }
 }
+

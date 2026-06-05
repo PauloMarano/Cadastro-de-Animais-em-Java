@@ -1,4 +1,4 @@
-package desafioCadastroAnimais.Methods.Case2;
+package desafioCadastroAnimais.Service.PetsServices;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class BuscarPet {
         Filtros filtros = new Filtros();
 
         System.out.println(""" 
-                SELECIONE PELO OQUE VOCE ACHAR O PET
+                SELECIONE O FILTRO
                 1- Nome ou sobrenome
                 2- Sexo
                 3- Idade
@@ -46,7 +46,7 @@ public class BuscarPet {
 
         }
 
-        System.out.println("Deseja colocar outro critério (S/N)");
+        System.out.println("Deseja colocar outro filtro (Sim/Nao)");
         String escolhaOutroCriterio = scanner.nextLine().toUpperCase();
 
         if (escolhaOutroCriterio.equals("S") || escolhaOutroCriterio.equals("SIM")){
@@ -62,7 +62,7 @@ public class BuscarPet {
 
         }
         else {
-
+            return;
         }
     }
 }

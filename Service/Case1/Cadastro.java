@@ -1,4 +1,4 @@
-package desafioCadastroAnimais.Methods.Case1;
+package desafioCadastroAnimais.Service.Case1;
 
 import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Regexs.RegexsCase1;
@@ -11,8 +11,7 @@ import java.util.Scanner;
 
 public class Cadastro {
     public static void Perguntas() throws IOException {
-        SalvandoInformacoes salvandoInformacoes = new SalvandoInformacoes();
-        VerificadorCadastro verificadorDeRegras = new VerificadorCadastro();
+        SaveInformacoes salvandoInformacoes = new SaveInformacoes();
         File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Perguntas.txt");
         FileReader fileReader = new FileReader(file_Perguntas);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -21,7 +20,6 @@ public class Cadastro {
         String linha;
 
         int i = 0;
-
         try {
             while ((linha = bufferedReader.readLine()) != null) {
                 System.out.println(linha);
@@ -33,14 +31,12 @@ public class Cadastro {
                 i += 1;
             }
 
-
         } catch (IOException e) {
             throw new RuntimeException(e);
 
         } finally {
             salvandoInformacoes.salvamento_respostas(respostas);
         }
-
     }
 }
 

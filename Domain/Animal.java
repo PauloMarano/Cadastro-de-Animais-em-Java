@@ -79,7 +79,7 @@ public class Animal {
         if (strings[2] != null) setSexoAnimal(SexoAnimal.valueOf(strings[2].toUpperCase())); else setSexoAnimal(SexoAnimal.valueOf(NAO_INFORMADO));
         if (strings[3] != null) setEndereco(strings[3]); else setEndereco(NAO_INFORMADO);
         if (strings[1] != null)  setGatoOuChachorro(GatoOuCachorro.valueOf(strings[1].toUpperCase())); else setGatoOuChachorro(GatoOuCachorro.valueOf(NAO_INFORMADO));
-        if (strings[4] != null) setIdade(String.valueOf((strings[4]))); else setIdade(NAO_INFORMADO);
-        if (strings[5] != null) setPeso(String.valueOf((strings[5]))); else setPeso(NAO_INFORMADO);
+        if (strings[4] != null) setIdade((strings[4])); else setIdade(NAO_INFORMADO);
+        if (strings[5] != null) setPeso((strings[5])); else setPeso(NAO_INFORMADO);
     }
 }

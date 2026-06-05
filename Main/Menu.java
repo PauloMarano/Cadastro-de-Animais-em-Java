@@ -1,9 +1,10 @@
 package desafioCadastroAnimais.Main;
 
-import desafioCadastroAnimais.Methods.Pets;
-import desafioCadastroAnimais.Methods.Case2.BuscarPet;
-import desafioCadastroAnimais.Domain.LeituraCases;
-import desafioCadastroAnimais.Methods.Case1.Cadastro;
+import desafioCadastroAnimais.Service.PetsServices.DeletPet;
+import desafioCadastroAnimais.Service.PetsServices.Pets;
+import desafioCadastroAnimais.Service.PetsServices.BuscarPet;
+import desafioCadastroAnimais.Service.QuestionsReading.LeituraCases;
+import desafioCadastroAnimais.Service.Case1.Cadastro;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -31,7 +32,8 @@ public class Menu {
                         Pets.TodosPets();
                         break;
                     case "5":
-                        new Pets().DeletPet();
+                        DeletPet deletPet = new DeletPet();
+                        deletPet.Delet_Pet();
                         break;
                     case "6":
                         System.out.println("Saindo Do Menu, Obrigado");
