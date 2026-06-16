@@ -90,7 +90,8 @@ public class BuscarPet {
 
             switch (escolhaEdit){
                 case "1" -> {
-                    System.out.println("Funcionalidade de Edição (Update) será chamada aqui.");
+                    AlteracaoAnimal alteracaoAnimal = new AlteracaoAnimal();
+                    alteracaoAnimal.alteracao(animalEscolhido);
                 }
                 case "2" -> {
                     DeletPet deletPet = new DeletPet();
