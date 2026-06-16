@@ -1,4 +1,4 @@
-package desafioCadastroAnimais.Service.PetsServices;
+package desafioCadastroAnimais.Service.PetsServices.FilterSetDelet;
 
 
 import desafioCadastroAnimais.Domain.Animal;

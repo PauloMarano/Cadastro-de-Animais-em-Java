@@ -25,4 +25,8 @@ public class Pets {
     public static List<Animal> getPets() {
         return pets;
     }
+
+    public static void setPets(List<Animal> pets) {
+        Pets.pets = pets;
+    }
 }
