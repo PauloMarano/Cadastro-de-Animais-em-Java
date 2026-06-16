@@ -1,8 +1,5 @@
 package desafioCadastroAnimais.Domain;
 
-
-import java.util.NavigableMap;
-
 public class Animal {
 
     private String nome;
@@ -71,6 +68,19 @@ public class Animal {
 
     public void setRaca(String raca) {
         this.raca = raca;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", raca='" + raca + '\'' +
+                ", idade='" + idade + '\'' +
+                ", peso='" + peso + '\'' +
+                ", sexoAnimal=" + sexoAnimal +
+                ", gatoOuChachorro=" + gatoOuChachorro +
+                '}';
     }
 
     public final void animalFinal(String [] strings){

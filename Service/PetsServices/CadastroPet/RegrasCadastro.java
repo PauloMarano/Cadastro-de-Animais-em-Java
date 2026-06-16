@@ -1,4 +1,4 @@
-package desafioCadastroAnimais.Service.Case1;
+package desafioCadastroAnimais.Service.PetsServices.CadastroPet;
 
 import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Regexs.RegexsCase1;

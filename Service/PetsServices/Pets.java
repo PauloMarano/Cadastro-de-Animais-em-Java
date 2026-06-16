@@ -15,7 +15,9 @@ public class Pets {
         int i = 0;
         for (Animal pet : pets) {
             i += 1;
-            System.out.println(i + "- " + pet.getNome());
+            System.out.println(i + "- Nome: " + pet.getNome() +
+                    " tipo: " + pet.getGatoOuChachorro() +
+                    " raça: " + pet.getRaca());
         }
         return pets;
     }

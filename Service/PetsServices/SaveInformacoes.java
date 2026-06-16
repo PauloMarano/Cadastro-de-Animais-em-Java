@@ -1,7 +1,7 @@
-package desafioCadastroAnimais.Service.Case1;
+package desafioCadastroAnimais.Service.PetsServices;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Service.PetsServices.Pets;
+import desafioCadastroAnimais.Service.PetsServices.CadastroPet.RegrasCadastro;
 import desafioCadastroAnimais.Regexs.RegexsCase1;
 
 import java.io.BufferedWriter;

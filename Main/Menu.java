@@ -4,7 +4,7 @@ import desafioCadastroAnimais.Service.PetsServices.DeletPet;
 import desafioCadastroAnimais.Service.PetsServices.Pets;
 import desafioCadastroAnimais.Service.PetsServices.BuscarPet;
 import desafioCadastroAnimais.Service.QuestionsReading.LeituraCases;
-import desafioCadastroAnimais.Service.Case1.Cadastro;
+import desafioCadastroAnimais.Service.PetsServices.CadastroPet.Cadastro;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -17,7 +17,7 @@ public class Menu {
         try {
             while (true) {
                 leituraArquivo.leitura_Cases();
-                escolha = scanner.nextLine();
+                escolha = scanner.next();
                 switch (escolha) {
                     case "1":
                         Cadastro.Perguntas();

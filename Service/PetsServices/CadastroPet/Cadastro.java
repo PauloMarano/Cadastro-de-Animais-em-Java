@@ -1,7 +1,8 @@
-package desafioCadastroAnimais.Service.Case1;
+package desafioCadastroAnimais.Service.PetsServices.CadastroPet;
 
 import desafioCadastroAnimais.Domain.Animal;
 import desafioCadastroAnimais.Regexs.RegexsCase1;
+import desafioCadastroAnimais.Service.PetsServices.SaveInformacoes;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,9 +11,10 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Cadastro {
+
     public static void Perguntas() throws IOException {
         SaveInformacoes salvandoInformacoes = new SaveInformacoes();
-        File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Perguntas.txt");
+        File file_Perguntas = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\Service\\QuestionsReading\\Perguntas.txt");
         FileReader fileReader = new FileReader(file_Perguntas);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         Scanner scanner = new Scanner(System.in);
