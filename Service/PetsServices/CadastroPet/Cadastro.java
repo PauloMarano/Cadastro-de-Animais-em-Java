@@ -1,8 +1,7 @@
 package desafioCadastroAnimais.Service.PetsServices.CadastroPet;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Regexs.RegexsCase1;
-import desafioCadastroAnimais.Service.PetsServices.SaveInformacoes;
+import desafioCadastroAnimais.Regexs.RegexsValidacao;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -27,7 +26,7 @@ public class Cadastro {
                 System.out.println(linha);
                 String resposta = scanner.nextLine().toUpperCase();
                 respostas[i] = resposta.toUpperCase();
-                if (RegexsCase1.naoInformado(respostas[i])){
+                if (RegexsValidacao.naoInformado(respostas[i])){
                     respostas[i] = Animal.NAO_INFORMADO;
                 }
                 i += 1;

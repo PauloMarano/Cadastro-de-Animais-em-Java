@@ -42,6 +42,7 @@ public class BuscarPet {
                 case "4" -> animalList = Filter.Filtro(animalList, animal -> animal.getPeso().equals(filtro));
                 case "5" -> animalList = Filter.Filtro(animalList, animal -> animal.getRaca().toUpperCase().equals(filtro));
                 case "6" -> animalList = Filter.Filtro(animalList, animal -> animal.getEndereco().toUpperCase().contains(filtro));
+                case "7" -> animalList = Filter.Filtro(animalList, animal -> animal.getDate().contains(filtro));
                 default -> System.out.println("Opção inválida! Tente novamente.");
             }
 

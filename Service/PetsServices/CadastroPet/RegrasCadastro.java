@@ -1,11 +1,11 @@
 package desafioCadastroAnimais.Service.PetsServices.CadastroPet;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Regexs.RegexsCase1;
+import desafioCadastroAnimais.Regexs.RegexsValidacao;
 
 
 public class RegrasCadastro {
-    RegexsCase1 regexs = new RegexsCase1();
+    RegexsValidacao regexs = new RegexsValidacao();
 
     public boolean verificador(Animal animal) {
         boolean verifique = false;

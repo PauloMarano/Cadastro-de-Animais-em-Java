@@ -1,8 +1,8 @@
-package desafioCadastroAnimais.Service.PetsServices;
+package desafioCadastroAnimais.Service.PetsServices.CadastroPet;
 
 import desafioCadastroAnimais.Domain.Animal;
-import desafioCadastroAnimais.Service.PetsServices.CadastroPet.RegrasCadastro;
-import desafioCadastroAnimais.Regexs.RegexsCase1;
+import desafioCadastroAnimais.Regexs.RegexsValidacao;
+import desafioCadastroAnimais.Service.PetsServices.Pets;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -33,14 +33,15 @@ public class SaveInformacoes {
             Pets.SaveAnimal(animal);
 
             //criando arquivo animal
-            String nomeArquivo = dataHora + RegexsCase1.removerEspacos(animal.getNome()) + ".txt";
+            String nomeArquivo = dataHora + RegexsValidacao.removerEspacos(animal.getNome()) + ".txt";
             String[] animalFinal = {"Nome: " + animal.getNome(),
                     "Endereco: " + animal.getEndereco(),
                     "Idade: " + animal.getIdade(),
                     "Peso: " + animal.getPeso(),
                     "Sexo: " + animal.getSexoAnimal(),
                     "Tipo: " + animal.getGatoOuChachorro(),
-                    "Raca: " + animal.getRaca()};
+                    "Raca: " + animal.getRaca(),
+                    "Data de Criação: " + animal.getDate()};
 
             File file = new File("C:\\Users\\Paulin\\IdeaProjects\\Projetin Java\\src\\desafioCadastroAnimais\\AnimaisCadastrados\\file.txt");
             try {
