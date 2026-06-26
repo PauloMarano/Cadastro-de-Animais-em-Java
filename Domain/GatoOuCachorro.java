@@ -7,5 +7,4 @@ public enum GatoOuCachorro {
     CADELA,
     REPITIL,
     PASSARO,
-    NAO_INFORMADO;
 }

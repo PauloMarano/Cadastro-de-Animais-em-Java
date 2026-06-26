@@ -5,5 +5,4 @@ public enum SexoAnimal {
     MACHO,
     F,
     FEMEA,
-    NAO_INFORMADO;
 }

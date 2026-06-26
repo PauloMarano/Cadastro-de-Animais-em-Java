@@ -13,7 +13,7 @@ public class BuscarPet {
         List<Animal> animalList = Pets.getPets();
         Scanner scanner = new Scanner(System.in);
         boolean continuarFiltrando = true;
-        int i =0;
+        int i = 0;
 
         while (continuarFiltrando) {
             System.out.println(""" 
@@ -26,6 +26,7 @@ public class BuscarPet {
                     6- Endereço
                     7- Data de Cadastro
                     0- Sair""");
+
             String escolha1 = scanner.nextLine();
 
             if (escolha1.equals("0")) {
@@ -43,12 +44,8 @@ public class BuscarPet {
                 case "5" -> animalList = Filter.Filtro(animalList, animal -> animal.getRaca().toUpperCase().equals(filtro));
                 case "6" -> animalList = Filter.Filtro(animalList, animal -> animal.getEndereco().toUpperCase().contains(filtro));
                 case "7" -> animalList = Filter.Filtro(animalList, animal -> animal.getDate().contains(filtro));
-                default -> System.out.println("Opção inválida! Tente novamente.");
-            }
 
-            if (animalList.isEmpty()) {
-                System.out.println("Nenhum animal foi encontrado com os filtros, voltando para o menu!");
-                break;
+                default -> System.out.println("Opção inválida! Tente novamente.");
             }
 
             System.out.println("Deseja aplicar mais um filtro? (Sim/Nao)");
@@ -60,49 +57,49 @@ public class BuscarPet {
         }
 
         if (animalList.isEmpty()) {
-            System.out.println("Nenhum pet encontrado.");
+            System.out.println("Nenhum animal foi encontrado com os filtros, voltando para o menu!");
+            return;
         }
-        else {
-            for (Animal animal : animalList) {
-                 i+=1;
-                System.out.println(i + "- Nome: " + animal.getNome() +
-                        " tipo: " + animal.getGatoOuChachorro() +
-                        " raça: " + animal.getRaca());
+
+        for (Animal animal : animalList) {
+            i += 1;
+            System.out.println(i + " " + animal);
+        }
+
+        System.out.println("Selecione o Animal: ");
+
+        int escolhaAnimal = scanner.nextInt() - 1;
+        scanner.nextLine();
+
+        if (escolhaAnimal < 0 || escolhaAnimal >= animalList.size()) {
+            System.out.println("Índice inválido.");
+            return;
+        }
+
+        Animal animalEscolhido = animalList.get(escolhaAnimal);
+        System.out.println(animalEscolhido);
+
+        System.out.println("""
+                1- Alterar alguma informação do animal
+                2- Excluir Animal
+                0- Voltar para o menu""");
+
+        String escolhaEdit = scanner.nextLine();
+
+        switch (escolhaEdit) {
+            case "1" -> {
+                AlteracaoAnimal alteracaoAnimal = new AlteracaoAnimal();
+                alteracaoAnimal.alteracao(animalEscolhido);
             }
-            System.out.println("Selecione o Animal: ");
-
-            int escolhaAnimal = scanner.nextInt() - 1;
-            scanner.nextLine();
-
-            if (escolhaAnimal < 0 || escolhaAnimal >= animalList.size()) {
-                System.out.println("Índice inválido.");
-                return;
+            case "2" -> {
+                DeletPet deletPet = new DeletPet();
+                deletPet.Delet_Pet(animalEscolhido);
+                System.out.println("Animal excluído com sucesso!");
             }
-
-            Animal animalEscolhido = animalList.get(escolhaAnimal);
-
-            System.out.println(animalEscolhido);
-            System.out.println("""
-                    1- Alterar alguma informação do animal
-                    2- Excluir Animal
-                    0- Voltar para o menu""");
-
-            String escolhaEdit = scanner.nextLine();
-
-            switch (escolhaEdit){
-                case "1" -> {
-                    AlteracaoAnimal alteracaoAnimal = new AlteracaoAnimal();
-                    alteracaoAnimal.alteracao(animalEscolhido);
-                }
-                case "2" -> {
-                    DeletPet deletPet = new DeletPet();
-                    deletPet.Delet_Pet(animalEscolhido);
-                    System.out.println("Animal excluído com sucesso!");
-                }
-                default -> System.out.println("Voltando para o menu principal");
-            }
+            default -> System.out.println("Voltando para o menu principal");
         }
     }
 }
+
 
 

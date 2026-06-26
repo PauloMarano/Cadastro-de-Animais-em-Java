@@ -85,15 +85,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "nome='" + nome + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", raca='" + raca + '\'' +
-                ", idade='" + idade + '\'' +
-                ", peso='" + peso + '\'' +
-                ", sexoAnimal=" + sexoAnimal +
-                ", gatoOuChachorro=" + gatoOuChachorro +
-                '}';
+        return nome + " - " + endereco + " - " + raca + " - " + idade + " - " + peso + " - " + sexoAnimal + " - " + gatoOuChachorro;
     }
 
     public final void animalFinal(String [] strings){
@@ -106,18 +98,14 @@ public class Animal {
 
         try {
             if (strings[1] != null)  setGatoOuChachorro(GatoOuCachorro.valueOf(strings[1].toUpperCase())); else setGatoOuChachorro(GatoOuCachorro.valueOf(NAO_INFORMADO));
-
         } catch (IllegalArgumentException e) {
             setGatoOuChachorro(GatoOuCachorro.valueOf(NAO_INFORMADO));
         }
         try {
             if (strings[2] != null) setSexoAnimal(SexoAnimal.valueOf(strings[2].toUpperCase())); else setSexoAnimal(SexoAnimal.valueOf(NAO_INFORMADO));
-
         } catch (IllegalArgumentException e) {
             setSexoAnimal(SexoAnimal.valueOf(NAO_INFORMADO));
         }
-
-
     }
 }
 
