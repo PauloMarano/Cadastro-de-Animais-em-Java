@@ -19,12 +19,11 @@ public class BuscarPet {
             System.out.println(""" 
                     SELECIONE O FILTRO
                     1- Nome ou sobrenome
-                    2- Sexo
-                    3- Idade
-                    4- Peso
-                    5- Raça
-                    6- Endereço
-                    7- Data de Cadastro
+                    2- Idade
+                    3- Peso
+                    4- Raça
+                    5- Endereço
+                    6- Data de Cadastro
                     0- Sair""");
 
             String escolha1 = scanner.nextLine();
@@ -38,12 +37,11 @@ public class BuscarPet {
 
             switch (escolha1) {
                 case "1" -> animalList = Filter.Filtro(animalList, animal -> animal.getNome().toUpperCase().contains(filtro));
-                case "2" -> animalList = Filter.Filtro(animalList, animal -> animal.getSexoAnimal().equals(filtro));
-                case "3" -> animalList = Filter.Filtro(animalList, animal -> animal.getIdade().equals(filtro));
-                case "4" -> animalList = Filter.Filtro(animalList, animal -> animal.getPeso().equals(filtro));
-                case "5" -> animalList = Filter.Filtro(animalList, animal -> animal.getRaca().toUpperCase().equals(filtro));
-                case "6" -> animalList = Filter.Filtro(animalList, animal -> animal.getEndereco().toUpperCase().contains(filtro));
-                case "7" -> animalList = Filter.Filtro(animalList, animal -> animal.getDate().contains(filtro));
+                case "2" -> animalList = Filter.Filtro(animalList, animal -> animal.getIdade().equals(filtro));
+                case "3" -> animalList = Filter.Filtro(animalList, animal -> animal.getPeso().equals(filtro));
+                case "4" -> animalList = Filter.Filtro(animalList, animal -> animal.getRaca().toUpperCase().equals(filtro));
+                case "5" -> animalList = Filter.Filtro(animalList, animal -> animal.getEndereco().toUpperCase().contains(filtro));
+                case "6" -> animalList = Filter.Filtro(animalList, animal -> animal.getDate().contains(filtro));
 
                 default -> System.out.println("Opção inválida! Tente novamente.");
             }

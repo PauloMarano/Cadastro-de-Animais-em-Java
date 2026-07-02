@@ -95,16 +95,15 @@ public class Animal {
         if (strings[4] != null) setIdade((strings[4])); else setIdade(NAO_INFORMADO);
         if (strings[5] != null) setPeso((strings[5])); else setPeso(NAO_INFORMADO);
 
-
         try {
             if (strings[1] != null)  setGatoOuChachorro(GatoOuCachorro.valueOf(strings[1].toUpperCase())); else setGatoOuChachorro(GatoOuCachorro.valueOf(NAO_INFORMADO));
         } catch (IllegalArgumentException e) {
-            setGatoOuChachorro(GatoOuCachorro.valueOf(NAO_INFORMADO));
+            System.out.println("Animal Invalido! Tente Novamente!");
         }
         try {
             if (strings[2] != null) setSexoAnimal(SexoAnimal.valueOf(strings[2].toUpperCase())); else setSexoAnimal(SexoAnimal.valueOf(NAO_INFORMADO));
         } catch (IllegalArgumentException e) {
-            setSexoAnimal(SexoAnimal.valueOf(NAO_INFORMADO));
+            System.out.println("Animal Invalido! Tente Novamente!");
         }
     }
 }
